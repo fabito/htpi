@@ -12,7 +12,7 @@ services:
      - ${HTPC_MEDIA_HOME}/downloads:/downloads
      - ${HTPC_MEDIA_HOME}/media/videos/tvshows:/tv
     extra_hosts:
-     - "kodi:${KODI_HOST}"     
+     - "kodi:${HTPC_KODI_HOST}"     
     environment:
      - TZ=${HTPC_TIMEZONE}
      - PGID=${HTPC_GROUP_ID}
