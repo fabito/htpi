@@ -1,0 +1,17 @@
+version: '2'
+services:
+  transmission:
+    image: lsioarmhf/transmission
+    restart: ${HTPC_RESTART_POLICY}
+    ports:
+     - "9091:9091"
+     - "51413:51413"
+     - "51413:51413/udp"
+    volumes:
+     - ${HTPC_CONFIG_HOME}/transmission:/config
+     - ${HTPC_MEDIA_HOME}/downloads:/downloads
+     - ${HTPC_MEDIA_HOME}/watch:/watch
+    environment:
+     - TZ=${HTPC_TIMEZONE}
+     - PGID=${HTPC_GROUP_ID}
+     - PUID=${HTPC_USER_ID}
