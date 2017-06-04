@@ -11,6 +11,8 @@ services:
      - ${HTPC_CONFIG_HOME}/sickrage:/config
      - ${HTPC_MEDIA_HOME}/downloads:/downloads
      - ${HTPC_MEDIA_HOME}/media/videos/tvshows:/tv
+    extra_hosts:
+     - "kodi:${KODI_HOST}"     
     environment:
      - TZ=${HTPC_TIMEZONE}
      - PGID=${HTPC_GROUP_ID}

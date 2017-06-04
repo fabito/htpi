@@ -22,6 +22,7 @@ Create a `settings.bash` file which will export the necessary environment variab
 cat <<EOF > settings.bash
 #!/usr/bin/env bash
 
+export DOCKERHOST=$(ifconfig | grep -E "([0-9]{1,3}\.){3}[0-9]{1,3}" | grep -v 127.0.0.1 | awk '{ print $2 }' | cut -f2 -d: | head -n1)
 export HTPC_HOME="/mnt/hdd/htpc"
 export HTPC_CONFIG_HOME="~/.htpc"
 export HTPC_MEDIA_HOME="/mnt/hdd/htpc"

@@ -4,4 +4,4 @@ readonly env=${1:-"settings.bash"}
 
 source ${env}
 
-docker-compose up -f transmission.yaml -f sickrage.yaml -d
+docker-compose -f transmission.yaml -f sickrage.yaml up -d
