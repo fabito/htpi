@@ -1,14 +1,14 @@
 version: '2'
 services:
-  sickrage:
-    image: ${HTPC_PLATFORM}/sickrage
+  radarr:
+    image: ${HTPC_PLATFORM}/radarr
     restart: ${HTPC_RESTART_POLICY}
     ports:
-     - "8081:8081"
+     - "7878:7878"
     volumes:
-     - ${HTPC_CONFIG_HOME}/sickrage:/config
+     - ${HTPC_CONFIG_HOME}/radarr:/config
      - ${HTPC_DOWNLOAD_HOME}/downloads:/downloads
-     - ${HTPC_MEDIA_HOME}/media/videos/tvshows:/tv
+     - ${HTPC_MEDIA_HOME}/media/videos/movies:/movies
     extra_hosts:
      - "kodi:${HTPC_KODI_HOST}"     
     environment:

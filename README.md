@@ -5,7 +5,7 @@ My docker-compose HTPC configuration for raspberry py
 ## Features:
 
 * Transmission for torrents
-* Couchpotato for Movies
+* Radarr for Movies
 * Sickrage for TV Shows
 
 
@@ -19,13 +19,15 @@ My docker-compose HTPC configuration for raspberry py
 Create a `settings.bash` file which will export the necessary environment variables
 
 ```bash
-cat <<EOF > settings.bash
+cat <<'EOF' > settings.bash
 #!/usr/bin/env bash
 
+export HTPC_PLATFORM="lsioarmhf"
 export HTPC_KODI_HOST=$(ifconfig | grep -E "([0-9]{1,3}\.){3}[0-9]{1,3}" | grep -v 127.0.0.1 | awk '{ print $2 }' | cut -f2 -d: | head -n1)
 export HTPC_HOME="/mnt/hdd/htpc"
 export HTPC_CONFIG_HOME="~/.htpc"
 export HTPC_MEDIA_HOME="/mnt/hdd/htpc"
+export HTPC_DOWNLOAD_HOME="/mnt/hdd/htpc"
 export HTPC_USER_ID=$(id -u)
 export HTPC_GROUP_ID=$(id -u)
 export HTPC_TIMEZONE=$(</etc/timezone)
