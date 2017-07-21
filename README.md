@@ -11,9 +11,24 @@ My docker-compose HTPC configuration for raspberry py
 
 ## Setting up
 
+* setup sd card with latest OSMC image
 * install docker 
-* install docker-compose
+* [install docker-compose](https://github.com/hypriot/arm-compose#installation)
 * install git
+
+```bash
+
+# install lsb-release
+sudo apt-get install lsb-release
+
+# install docker
+curl -sSL https://get.docker.com | sh
+
+# Add osmc user to docker group
+sudo usermod -aG docker osmc
+
+```
+
 
 
 Create a `settings.bash` file which will export the necessary environment variables
