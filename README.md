@@ -51,7 +51,7 @@ EOF
 ```
 
 
-```
+```bash
 # find out hdd uuid
 blkid
 

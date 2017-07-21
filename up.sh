@@ -27,4 +27,19 @@ source ${env}
 [ -d "$HTPC_MEDIA_HOME" ] || mkdir -p ${HTPC_MEDIA_HOME} && chown -R ${HTPC_USER_ID}:${HTPC_GROUP_ID} ${HTPC_MEDIA_HOME}
 [ -d "$HTPC_DOWNLOAD_HOME" ] || mkdir -p ${HTPC_DOWNLOAD_HOME} && chown -R ${HTPC_USER_ID}:${HTPC_GROUP_ID} ${HTPC_DOWNLOAD_HOME}
 
-docker-compose -f transmission.yaml -f sickrage.yaml -f radarr.yaml up -d
+help() {
+  echo "Usage: "
+  echo "${__base} {up, down}"
+}
+
+case "$2" in
+  up)
+    docker-compose -f transmission.yaml -f sickrage.yaml -f radarr.yaml up -d
+    ;;
+  down)
+    docker-compose -f transmission.yaml -f sickrage.yaml -f radarr.yaml down
+    ;;
+  *)
+    help
+    ;;
+esac
