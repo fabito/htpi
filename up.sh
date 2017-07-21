@@ -34,10 +34,10 @@ help() {
 
 case "$2" in
   up)
-    docker-compose -f transmission.yaml -f sickrage.yaml -f radarr.yaml up -d
+    docker-compose -f transmission.yaml -f sonarr.yaml -f radarr.yaml up -d
     ;;
   down)
-    docker-compose -f transmission.yaml -f sickrage.yaml -f radarr.yaml down
+    docker-compose -f transmission.yaml -f sonarr.yaml -f radarr.yaml down
     ;;
   *)
     help

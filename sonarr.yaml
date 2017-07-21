@@ -1,0 +1,17 @@
+version: '2'
+services:
+  sonarr:
+    image: ${HTPC_PLATFORM}/sonarr
+    restart: ${HTPC_RESTART_POLICY}
+    ports:
+     - "8989:8989"
+    volumes:
+     - ${HTPC_CONFIG_HOME}/sonarr:/config
+     - ${HTPC_DOWNLOAD_HOME}/downloads:/downloads
+     - ${HTPC_MEDIA_HOME}/media/videos/tvshows:/tv
+    extra_hosts:
+     - "kodi:${HTPC_KODI_HOST}"     
+    environment:
+     - TZ=${HTPC_TIMEZONE}
+     - PGID=${HTPC_GROUP_ID}
+     - PUID=${HTPC_USER_ID}
