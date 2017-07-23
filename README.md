@@ -67,3 +67,13 @@ umount /media/EFI/
 sudo mount -a
 
 ```
+
+
+```bash
+
+source settings.bash && docker-compose -f transmission.yaml -f sonarr.yaml -f radarr.yaml up -d
+
+source settings.bash && docker-compose -f transmission.yaml -f sonarr.yaml -f radarr.yaml down
+
+
+```

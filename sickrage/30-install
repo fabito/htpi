@@ -1,0 +1,10 @@
+#!/usr/bin/with-contenv bash
+
+# install app
+[[ ! -d /app/sickrage/.git ]] && \
+	git clone https://git.sickrage.ca/SiCKRAGE/sickrage.git /app/sickrage
+
+# permissions
+chown -R abc:abc \
+	/app \
+	/config
