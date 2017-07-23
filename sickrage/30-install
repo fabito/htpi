@@ -2,7 +2,8 @@
 
 # install app
 [[ ! -d /app/sickrage/.git ]] && \
-	git clone https://git.sickrage.ca/SiCKRAGE/sickrage.git /app/sickrage
+	git clone https://git.sickrage.ca/SiCKRAGE/sickrage.git /app/sickrage && \
+	pip install -r /app/sickrage/requirements.txt
 
 # permissions
 chown -R abc:abc \
