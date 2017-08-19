@@ -29,8 +29,6 @@ sudo usermod -aG docker osmc
 
 ```
 
-
-
 Create a `settings.bash` file which will export the necessary environment variables
 
 ```bash
@@ -50,6 +48,7 @@ export HTPC_RESTART_POLICY="unless-stopped"
 EOF
 ```
 
+Mounting an external hdd
 
 ```bash
 # find out hdd uuid
@@ -65,14 +64,17 @@ sudo chmod 775 /mnt/hdd
 umount /media/EFI/
 
 sudo mount -a
-
 ```
 
 
+# Running
+
 ```bash
 
+# starting containers
 source settings.bash && docker-compose -f transmission.yaml -f sonarr.yaml -f radarr.yaml up -d
 
+# removing containers
 source settings.bash && docker-compose -f transmission.yaml -f sonarr.yaml -f radarr.yaml down
 
 
