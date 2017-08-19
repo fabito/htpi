@@ -1,23 +1,21 @@
 # htpi
-My docker-compose HTPC configuration for raspberry pi 
+My docker-compose HTPC configuration for raspberry pi.
 
 
 ## Features:
 
-* Transmission for torrents
+* [Kodi](https://kodi.tv/) / [OSMC](https://osmc.tv/)
+* [Transmission](https://transmissionbt.com/) for torrents
 * Radarr for Movies
-* Sickrage for TV Shows
+* [Sickrage](https://sickrage.github.io/) for TV Shows
 
 
 ## Setting up
 
-* setup sd card with latest OSMC image
+* setup an sd card with the [latest OSMC image](https://osmc.tv/download/)
 * install docker 
-* [install docker-compose](https://github.com/hypriot/arm-compose#installation)
-* install git
 
 ```bash
-
 # install lsb-release
 sudo apt-get install lsb-release
 
@@ -26,8 +24,11 @@ curl -sSL https://get.docker.com | sh
 
 # Add osmc user to docker group
 sudo usermod -aG docker osmc
-
 ```
+
+* [install docker-compose](https://github.com/hypriot/arm-compose#installation)
+* install git
+
 
 Create a `settings.bash` file which will export the necessary environment variables
 
@@ -66,8 +67,7 @@ umount /media/EFI/
 sudo mount -a
 ```
 
-
-# Running
+Running
 
 ```bash
 
