@@ -1,10 +1,7 @@
 version: '2'
 services:
   sickrage:
-    build:
-      context: ./sickrage
-      dockerfile: Dockerfile
-    # image: ${HTPC_PLATFORM}/sickrage
+    image: ${HTPC_PLATFORM}/sickrage
     restart: ${HTPC_RESTART_POLICY}
     ports:
      - "8081:8081"
