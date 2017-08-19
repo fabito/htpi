@@ -1,5 +1,5 @@
 # htpi
-My docker-compose HTPC configuration for raspberry py 
+My docker-compose HTPC configuration for raspberry pi 
 
 
 ## Features:
