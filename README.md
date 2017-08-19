@@ -72,10 +72,10 @@ Running
 ```bash
 
 # starting containers
-source settings.bash && docker-compose -f transmission.yaml -f sonarr.yaml -f radarr.yaml up -d
+source settings.bash && docker-compose -f transmission.yaml -f sickrage.yaml -f radarr.yaml up -d
 
 # removing containers
-source settings.bash && docker-compose -f transmission.yaml -f sonarr.yaml -f radarr.yaml down
+source settings.bash && docker-compose -f transmission.yaml -f sickrage -f radarr.yaml down
 
 
 ```
