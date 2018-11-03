@@ -1,0 +1,16 @@
+version: '2'
+services:
+  jackett:
+    image: ${HTPC_PLATFORM}/jackett
+    restart: ${HTPC_RESTART_POLICY}
+    ports:
+     - "9117:9117"
+    volumes:
+     - ${HTPC_CONFIG_HOME}/jackett:/config
+     - ${HTPC_DOWNLOAD_HOME}/downloads:/downloads
+    extra_hosts:
+     - "kodi:${HTPC_KODI_HOST}"     
+    environment:
+     - TZ=${HTPC_TIMEZONE}
+     - PGID=${HTPC_GROUP_ID}
+     - PUID=${HTPC_USER_ID}

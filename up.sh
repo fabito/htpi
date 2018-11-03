@@ -34,10 +34,10 @@ help() {
 
 case "$2" in
   up)
-    docker-compose -f transmission.yaml -f sickrage.yaml up -d
+    docker-compose ${HTPC_SERVICES} up -d
     ;;
   down)
-    docker-compose -f transmission.yaml -f sickrage.yaml down
+    docker-compose ${HTPC_SERVICES} down
     ;;
   *)
     help
